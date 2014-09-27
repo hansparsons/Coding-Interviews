@@ -1,0 +1,6 @@
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\bin\Debug\Coding-Interviews.exe.config
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\bin\Debug\Coding-Interviews.exe
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\bin\Debug\Coding-Interviews.pdb
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\obj\Debug\Coding-Interviews.csprojResolveAssemblyReference.cache
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\obj\Debug\Coding-Interviews.exe
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\obj\Debug\Coding-Interviews.pdb
