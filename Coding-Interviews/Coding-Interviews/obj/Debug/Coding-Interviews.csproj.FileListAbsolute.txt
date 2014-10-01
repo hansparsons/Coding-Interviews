@@ -4,3 +4,11 @@ C:\Users\hans\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interv
 C:\Users\hans\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\obj\Debug\Coding-Interviews.csprojResolveAssemblyReference.cache
 C:\Users\hans\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\obj\Debug\Coding-Interviews.exe
 C:\Users\hans\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\obj\Debug\Coding-Interviews.pdb
+C:\Users\Richard\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\bin\Debug\Coding-Interviews.exe.config
+C:\Users\Richard\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\bin\Debug\Coding-Interviews.exe
+C:\Users\Richard\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\bin\Debug\Coding-Interviews.pdb
+C:\Users\Richard\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\bin\Debug\Coding-Interviews-Lib.dll
+C:\Users\Richard\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\bin\Debug\Coding-Interviews-Lib.pdb
+C:\Users\Richard\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\obj\Debug\Coding-Interviews.csprojResolveAssemblyReference.cache
+C:\Users\Richard\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\obj\Debug\Coding-Interviews.exe
+C:\Users\Richard\Documents\GitHub\Coding-Interviews\Coding-Interviews\Coding-Interviews\obj\Debug\Coding-Interviews.pdb
