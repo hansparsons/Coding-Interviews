@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coding-Interviews", "Coding
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coding-Interviews-Lib", "Coding-Interviews-Lib\Coding-Interviews-Lib.csproj", "{5DD9AFBD-4642-41F5-BE1E-FAAD771D83A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{F73E7039-9A79-49B6-97E1-B0759B093A03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C6E23D89-46CB-46C8-A8AA-71CD5F5FD5AB}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +28,10 @@ Global
 		{5DD9AFBD-4642-41F5-BE1E-FAAD771D83A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DD9AFBD-4642-41F5-BE1E-FAAD771D83A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DD9AFBD-4642-41F5-BE1E-FAAD771D83A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F73E7039-9A79-49B6-97E1-B0759B093A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F73E7039-9A79-49B6-97E1-B0759B093A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F73E7039-9A79-49B6-97E1-B0759B093A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F73E7039-9A79-49B6-97E1-B0759B093A03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
