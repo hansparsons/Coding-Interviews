@@ -36,5 +36,10 @@ namespace WinFormUI
             OutputTextBox.AppendText("\n");
             OutputTextBox.AppendText(Answers.MultiplyBinary(input1, input2).ToString());
         }
+
+        private void Input1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

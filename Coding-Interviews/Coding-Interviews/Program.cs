@@ -7,6 +7,8 @@ namespace Coding_Interviews
         static void Main(string[] args)
         {
 
+            long y = Answers.Multiply(-3, 5);
+            long j = Answers.MultiplyBinary(-4, -4);
 
             string ls = Answers.ReverseString("home");
             string hj = Answers.ReverseStringWithoutCollections("home");

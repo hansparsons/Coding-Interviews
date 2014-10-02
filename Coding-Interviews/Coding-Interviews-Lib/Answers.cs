@@ -282,6 +282,51 @@ namespace Coding_Interviews_Lib
          * 
          */
 
+        public static long Multiply( int x, int y)
+        {
+            long result = 0;
+            int positiveXcast;
+            int positiveYcast;
+
+            if ((x == 0) || (y == 0))
+            {
+                return 0;
+            }
+
+            if (x < 0)//my version of math.abs
+            {
+                positiveXcast = -x;
+            }
+            else
+            {
+                positiveXcast = x;
+            }
+
+            if (y <0 ) //my version of math.abs
+            {
+                positiveYcast = -y;
+            }
+            else
+            {
+                positiveYcast = y;
+            }
+
+            for (int i = 0; i < positiveXcast; i++)
+            {
+                result += positiveYcast;
+            }
+
+            if (( x < 0 && y > 0) || ( x > 0 && y < 0)) // one int is negative and the other is positive
+            {
+                result = result - (result + result);
+                return result; // return negative value
+            }
+            else // both x and y are either negative or positive
+            {
+            return result; // return positive value
+            }
+        }
+
         public static Int64 MultiplyBinary(Int32 mulitiplicand, Int32 multiplier)
         {
         
