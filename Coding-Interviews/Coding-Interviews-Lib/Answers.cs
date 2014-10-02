@@ -276,6 +276,45 @@ namespace Coding_Interviews_Lib
             return result.ToArray();
         }
 
+        /*
+         * Multiply two integers without using the multipication
+         * operator.
+         * 
+         */
+
+        public static Int64 MultiplyBinary(Int32 mulitiplicand, Int32 multiplier)
+        {
+        
+            /* Create mask for lowest order bit
+             * basic algorithm is as follows:
+             * 1. The multiplicand/first number or zero is added to the
+             * result depending on the 1 or 0 value of the bit values of the
+             * multiplier.  If 1 is the value we add the multiplicand to the result
+             * if 0 is the value then we add zero to the result.
+             * 2.  Since this is a bitwise operation I only look at 1 bit of the 
+             * multiplier at a time.  To do that I mask via 0x1 and bitwise AND '&'
+             * which isolates the bit 0 of the multiplier to exclusion of the rest 
+             * of the number.
+             * 3.  After I finish doing the addition, the multiplicand is shifted to the 
+             * left and the multiplier is shifted to the right. The operation is continued
+             * while the multiplier is greater than zero.
+             */
+            Int64 longMultiplicand = mulitiplicand; //required with large numbers the get
+                                                    //into long numbers
+            const int mask = 1;     // to mask the bit 0;
+            Int64 result = 0;       // accumulator and product
+
+            for (; multiplier > 0; multiplier = multiplier >> 1, longMultiplicand = longMultiplicand << 1)
+            {
+                if ((mask & multiplier) == 0)
+                    result += 0;
+                else
+                    result += longMultiplicand;
+            }
+            return result;
+        }
+
+
 
     }
 }

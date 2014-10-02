@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Core;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Coding_Interviews_Lib;
 
 namespace UnitTests
 {
-    public class Class1
+    public class Tests
     {
         [TestFixture]
         public class UnitTests

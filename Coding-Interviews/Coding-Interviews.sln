@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C6E23D
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormUI", "WinFormUI\WinFormUI.csproj", "{07096F54-33EF-4E84-89B3-C3A98F62F268}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{F73E7039-9A79-49B6-97E1-B0759B093A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F73E7039-9A79-49B6-97E1-B0759B093A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F73E7039-9A79-49B6-97E1-B0759B093A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07096F54-33EF-4E84-89B3-C3A98F62F268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07096F54-33EF-4E84-89B3-C3A98F62F268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07096F54-33EF-4E84-89B3-C3A98F62F268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07096F54-33EF-4E84-89B3-C3A98F62F268}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
