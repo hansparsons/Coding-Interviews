@@ -53,7 +53,7 @@ namespace Earnings_Dip
             DateTime today = DateTime.Today;
 
             // Add the label titles to the listbox
-            string labelString = "Date" + "\t" + "\t" + "Open" + "\t" + "High" + "\t" + "Low" + "\t" + "Close" + "\t" + "Close%";
+            string labelString = "Date" + "\t" + "\t" + "Open" + "\t" + "High" + "\t" + "Low" + "\t" + "Close" + "\t" + "Close%" + "\t" + "HLDelta"; ;
             myListBox.Items.Add(labelString);
 
             // we need to grab the stock price data associated with each of the earnings dates
@@ -93,8 +93,11 @@ namespace Earnings_Dip
                             decimal closePercent = (((Convert.ToDecimal(previousArray[4])) - (Convert.ToDecimal(myArray[4]))) / (Convert.ToDecimal(previousArray[4]))) * 100;
                             closePercent = Math.Round(closePercent,2);
 
+                            // calculate the High Low Delta
+                            decimal HLDelta = (Convert.ToDecimal(previousArray[2])) - (Convert.ToDecimal(previousArray[3])) ;
+
                             // we have a match - list the day off earning day stock info
-                            listString = Convert.ToDateTime(previousArray[0]).ToShortDateString() + "\t" + previousArray[1].ToString() + "\t" + previousArray[2].ToString() + "\t" + previousArray[3].ToString() + "\t" + previousArray[4].ToString() + "\t" + closePercent.ToString();
+                            listString = Convert.ToDateTime(previousArray[0]).ToShortDateString() + "\t" + previousArray[1].ToString() + "\t" + previousArray[2].ToString() + "\t" + previousArray[3].ToString() + "\t" + previousArray[4].ToString() + "\t" + closePercent.ToString() + "\t" + HLDelta.ToString();
                             myListBox.Items.Add(listString);
 
                             // we have a match - list the day off earning day stock info
