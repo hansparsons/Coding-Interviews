@@ -32,13 +32,16 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(90, 69);
+            this.button1.Location = new System.Drawing.Point(265, 42);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 40);
+            this.button1.Size = new System.Drawing.Size(119, 40);
             this.button1.TabIndex = 1;
             this.button1.Text = "Get Info";
             this.button1.UseVisualStyleBackColor = true;
@@ -70,17 +73,46 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Stock Symbol";
             // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(390, 115);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(372, 368);
+            this.listBox2.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(390, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Stock Symbol";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(468, 42);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(138, 20);
+            this.textBox2.TabIndex = 6;
+            this.textBox2.Text = "tsla";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 492);
+            this.ClientSize = new System.Drawing.Size(781, 492);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Earnings Dip";
+            this.Text = "Next Day Earnings Dip";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,6 +124,9 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
