@@ -70,14 +70,19 @@ namespace Earnings_Dip
             PullStockInfoIntoFile(stockSymbol, stockFilePath, stockFileName);
             PullStockInfoIntoFile(stockSymbol2, stockFilePath, stockFileName2);
 
-            List<string> listDates = BuildListOfDates(urlString);
-            PopulateListBox(listDates, stockFileName,listBox1, chart1, dataGridView1);
-            PopulateSevenDayChart( listDates, stockFileName, chart3);
+            List<string> listDates = BuildListOfDates(urlString, stockSymbol);
+            if (listDates.Count() != 0)
+            {
+                PopulateListBox(listDates, stockFileName, listBox1, chart1, dataGridView1);
+                PopulateSevenDayChart(listDates, stockFileName, chart3);
+            }
 
-
-            List<string> listDates2 = BuildListOfDates(urlString2);
-            PopulateListBox(listDates2, stockFileName2,listBox2, chart2, dataGridView2);
-            PopulateSevenDayChart(listDates2, stockFileName2, chart4);
+            List<string> listDates2 = BuildListOfDates(urlString2, stockSymbol2);
+            if (listDates2.Count() != 0)
+            {
+                PopulateListBox(listDates2, stockFileName2, listBox2, chart2, dataGridView2);
+                PopulateSevenDayChart(listDates2, stockFileName2, chart4);
+            }
         }
 
         public DateTime ReturnLastValidEarningsDate( List<string> listDates)
@@ -399,7 +404,7 @@ namespace Earnings_Dip
             }
         }
  
-        public List<string> BuildListOfDates(string urlString)
+        public List<string> BuildListOfDates(string urlString, string stockSymbol)
         {
             WebClient wc = new WebClient();
 
@@ -420,7 +425,16 @@ namespace Earnings_Dip
                          listDates.Add (Regex.Match(match.Value, @"<td>(.*?)<img src").Groups[1].Value);
                      }  
             }
-            return listDates;
+            if (listDates.Count == 0)
+            {
+
+                MessageBox.Show("There was no infomration about " + stockSymbol + "'s earnings date history.");
+                return listDates;
+            }
+            else
+            {
+                return listDates;
+            }
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
