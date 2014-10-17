@@ -59,9 +59,114 @@ namespace Earnings_Dip
 
             List<string> listDates = BuildListOfDates(urlString);
             PopulateListBox(listDates, stockFileName,listBox1, chart1, dataGridView1);
+            PopulateSevenDayChart( listDates, stockFileName, chart3);
+
 
             List<string> listDates2 = BuildListOfDates(urlString2);
             PopulateListBox(listDates2, stockFileName2,listBox2, chart2, dataGridView2);
+            PopulateSevenDayChart(listDates2, stockFileName2, chart4);
+        }
+
+        public void PopulateSevenDayChart(List<string> listDates, string stockFileName, Chart myChart)
+        {
+            // variable declarations
+            DateTime today = DateTime.Today;
+            DateTime latestEarningsDate = DateTime.Today;
+            int i = 0;
+            string tempString;
+            string[] tempArray;
+            
+            // find the latest valid earnings date
+            do
+            {
+                latestEarningsDate = Convert.ToDateTime(listDates[i]);
+                i++;
+            } while (Convert.ToDateTime(listDates[i]) > today);
+
+            // open the stock file for read
+            FileStream dataFile = File.Open(@stockFileName, FileMode.Open);
+            StreamReader dataStream = new StreamReader(dataFile);
+
+            // create a historical DataTable of all the stock close price
+            DataTable historicalClosePrice = new DataTable("ClosePrice");
+            historicalClosePrice.Columns.Add("Date", typeof(DateTime));
+            historicalClosePrice.Columns.Add("HighPrice", typeof(decimal));
+            historicalClosePrice.Columns.Add("LowPrice", typeof(decimal));
+            historicalClosePrice.Columns.Add("ClosePrice", typeof(decimal));
+
+            //fill the historicalDataTable with close stock price
+            while ((tempString = dataStream.ReadLine()) != null)
+            {
+                tempArray = tempString.Split(',');
+
+                if (tempString.Substring(0, 4) == "Date")
+                        {
+                    //temp hack we need to skip the first row of lables
+                }
+                else 
+                {
+
+                    historicalClosePrice.Rows.Add(Convert.ToDateTime(tempArray[0]).ToShortDateString(), (Convert.ToDecimal(tempArray[2])), (Convert.ToDecimal(tempArray[3])), (Convert.ToDecimal(tempArray[4])));
+                }
+
+            }
+
+            //close the stock file
+            dataStream.Close();
+            dataFile.Close();
+
+            int datesMatch = -1;
+            int indexOfEarningsDate = 0;
+
+            DateTime foo3 = DateTime.Today;
+
+             // we now need to find the index of the lastEarningsDate in the historicalClosePrice table
+            foreach (DataRow row in historicalClosePrice.Rows)
+            {
+                foo3 = (Convert.ToDateTime(row.ItemArray[0]));
+                datesMatch = DateTime.Compare(foo3, latestEarningsDate);
+
+                if ( datesMatch == 0)
+                {
+                    
+                    indexOfEarningsDate = historicalClosePrice.Rows.IndexOf(row);
+                }
+            }
+
+            // create a DataTable that contains the pre and post 7 day stock prices
+            // create a historical DataTable of all the stock close price
+            DataTable sevenDayClosePrice = new DataTable("SevenDayClosePrice");
+            sevenDayClosePrice.Columns.Add("Date", typeof(DateTime));
+            sevenDayClosePrice.Columns.Add("HighPrice", typeof(decimal));
+            sevenDayClosePrice.Columns.Add("LowPrice", typeof(decimal));
+            sevenDayClosePrice.Columns.Add("ClosePrice", typeof(decimal));
+
+            for (int sevenday = 7; sevenday > 0; sevenday--)
+            {
+                sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[58 - sevenday]["Date"], historicalClosePrice.Rows[58 - sevenday]["HighPrice"].ToString(), historicalClosePrice.Rows[58 - sevenday]["LowPrice"].ToString(), historicalClosePrice.Rows[58 - sevenday]["ClosePrice"].ToString()); 
+            }
+            sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[58]["Date"], historicalClosePrice.Rows[58]["HighPrice"].ToString(), historicalClosePrice.Rows[58]["LowPrice"].ToString(), historicalClosePrice.Rows[58]["ClosePrice"].ToString());
+
+            for (int sevenday = 1; sevenday < 8; sevenday++)
+            {
+                sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[58 + sevenday]["Date"], historicalClosePrice.Rows[58 + sevenday]["HighPrice"].ToString(), historicalClosePrice.Rows[58 + sevenday]["LowPrice"].ToString(), historicalClosePrice.Rows[58 + sevenday]["ClosePrice"].ToString());
+            }
+
+            // bind the sevenDayClosePrice DataTable to chart3
+            
+            myChart.Series["High"].XValueMember = "Date";
+            myChart.Series["High"].YValueMembers = "HighPrice";
+
+            myChart.Series["Low"].XValueMember = "Date";
+            myChart.Series["Low"].YValueMembers = "LowPrice";
+
+            myChart.Series["Close"].XValueMember = "Date";
+            myChart.Series["Close"].YValueMembers = "ClosePrice";
+
+            myChart.DataSource = sevenDayClosePrice;
+            myChart.DataBind();
+
+           
         }
 
         public void PopulateListBox(List<string> listDates, string stockFileName, ListBox myListBox, Chart myChart, DataGridView myDataGridView)

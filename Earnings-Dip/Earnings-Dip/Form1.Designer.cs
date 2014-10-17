@@ -33,13 +33,27 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -50,6 +64,14 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Open = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.High = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Low = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Close = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClosePercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AHM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Max = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,25 +81,21 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Open = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.High = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Low = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Close = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClosePercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AHM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Max = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(683, 42);
+            this.button1.Location = new System.Drawing.Point(712, 8);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 40);
+            this.button1.Size = new System.Drawing.Size(90, 26);
             this.button1.TabIndex = 1;
             this.button1.Text = "Get Info";
             this.button1.UseVisualStyleBackColor = true;
@@ -86,14 +104,14 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(974, 88);
+            this.listBox1.Location = new System.Drawing.Point(1275, 88);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(442, 368);
             this.listBox1.TabIndex = 2;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 42);
+            this.textBox1.Location = new System.Drawing.Point(86, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(138, 20);
             this.textBox1.TabIndex = 3;
@@ -103,7 +121,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 45);
+            this.label1.Location = new System.Drawing.Point(8, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 4;
@@ -112,7 +130,7 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(974, 462);
+            this.listBox2.Location = new System.Drawing.Point(1275, 462);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(442, 368);
             this.listBox2.TabIndex = 5;
@@ -120,7 +138,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(407, 45);
+            this.label2.Location = new System.Drawing.Point(407, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 7;
@@ -128,7 +146,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(485, 42);
+            this.textBox2.Location = new System.Drawing.Point(485, 12);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(138, 20);
             this.textBox2.TabIndex = 6;
@@ -145,7 +163,7 @@
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(12, 462);
+            this.chart1.Location = new System.Drawing.Point(11, 512);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -166,6 +184,9 @@
             this.chart1.Size = new System.Drawing.Size(392, 270);
             this.chart1.TabIndex = 8;
             this.chart1.Text = "chart1";
+            title1.Name = "Earnings next day history";
+            title1.Text = "Earnings next day history";
+            this.chart1.Titles.Add(title1);
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // chart2
@@ -177,7 +198,7 @@
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend2.Name = "Legend1";
             this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(410, 462);
+            this.chart2.Location = new System.Drawing.Point(410, 512);
             this.chart2.Name = "chart2";
             series4.ChartArea = "ChartArea1";
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -197,6 +218,9 @@
             this.chart2.Size = new System.Drawing.Size(392, 270);
             this.chart2.TabIndex = 9;
             this.chart2.Text = "chart2";
+            title2.Name = "Earnings next day history";
+            title2.Text = "Earnings next day history";
+            this.chart2.Titles.Add(title2);
             // 
             // dataGridView1
             // 
@@ -213,11 +237,83 @@
             this.ClosePercent,
             this.AHM,
             this.Max});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 88);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(392, 368);
+            this.dataGridView1.Size = new System.Drawing.Size(392, 192);
             this.dataGridView1.TabIndex = 10;
+            // 
+            // Date
+            // 
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Date.Width = 36;
+            // 
+            // Open
+            // 
+            this.Open.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Open.HeaderText = "Open";
+            this.Open.Name = "Open";
+            this.Open.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Open.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Open.Width = 39;
+            // 
+            // High
+            // 
+            this.High.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.High.HeaderText = "High";
+            this.High.Name = "High";
+            this.High.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.High.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.High.Width = 35;
+            // 
+            // Low
+            // 
+            this.Low.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Low.HeaderText = "Low";
+            this.Low.Name = "Low";
+            this.Low.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Low.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Low.Width = 33;
+            // 
+            // Close
+            // 
+            this.Close.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Close.HeaderText = "Close";
+            this.Close.Name = "Close";
+            this.Close.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Close.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Close.Width = 39;
+            // 
+            // ClosePercent
+            // 
+            this.ClosePercent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ClosePercent.HeaderText = "Close %";
+            this.ClosePercent.Name = "ClosePercent";
+            this.ClosePercent.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClosePercent.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ClosePercent.Width = 50;
+            // 
+            // AHM
+            // 
+            this.AHM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.AHM.HeaderText = "AHM %";
+            this.AHM.Name = "AHM";
+            this.AHM.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.AHM.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AHM.Width = 48;
+            // 
+            // Max
+            // 
+            this.Max.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Max.HeaderText = "Max %";
+            this.Max.Name = "Max";
+            this.Max.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Max.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Max.Width = 44;
             // 
             // dataGridView2
             // 
@@ -234,10 +330,10 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
-            this.dataGridView2.Location = new System.Drawing.Point(410, 88);
+            this.dataGridView2.Location = new System.Drawing.Point(410, 38);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(392, 368);
+            this.dataGridView2.Size = new System.Drawing.Size(392, 192);
             this.dataGridView2.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn1
@@ -312,83 +408,87 @@
             this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dataGridViewTextBoxColumn8.Width = 44;
             // 
-            // Date
+            // chart3
             // 
-            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Date.Width = 36;
+            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea3.AxisY.IsStartedFromZero = false;
+            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea3.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea3);
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend3.Name = "Legend1";
+            this.chart3.Legends.Add(legend3);
+            this.chart3.Location = new System.Drawing.Point(12, 236);
+            this.chart3.Name = "chart3";
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Legend = "Legend1";
+            series7.Name = "Close";
+            series7.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.Legend = "Legend1";
+            series8.Name = "High";
+            series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.Legend = "Legend1";
+            series9.Name = "Low";
+            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            this.chart3.Series.Add(series7);
+            this.chart3.Series.Add(series8);
+            this.chart3.Series.Add(series9);
+            this.chart3.Size = new System.Drawing.Size(392, 270);
+            this.chart3.TabIndex = 12;
+            this.chart3.Text = "chart3";
+            title3.Name = "7 day pre and post earnings";
+            title3.Text = "7 day pre and post earnings";
+            this.chart3.Titles.Add(title3);
             // 
-            // Open
+            // chart4
             // 
-            this.Open.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Open.HeaderText = "Open";
-            this.Open.Name = "Open";
-            this.Open.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Open.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Open.Width = 39;
-            // 
-            // High
-            // 
-            this.High.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.High.HeaderText = "High";
-            this.High.Name = "High";
-            this.High.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.High.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.High.Width = 35;
-            // 
-            // Low
-            // 
-            this.Low.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Low.HeaderText = "Low";
-            this.Low.Name = "Low";
-            this.Low.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Low.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Low.Width = 33;
-            // 
-            // Close
-            // 
-            this.Close.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Close.HeaderText = "Close";
-            this.Close.Name = "Close";
-            this.Close.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Close.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Close.Width = 39;
-            // 
-            // ClosePercent
-            // 
-            this.ClosePercent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ClosePercent.HeaderText = "Close %";
-            this.ClosePercent.Name = "ClosePercent";
-            this.ClosePercent.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ClosePercent.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClosePercent.Width = 50;
-            // 
-            // AHM
-            // 
-            this.AHM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.AHM.HeaderText = "AHM %";
-            this.AHM.Name = "AHM";
-            this.AHM.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.AHM.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.AHM.Width = 48;
-            // 
-            // Max
-            // 
-            this.Max.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Max.HeaderText = "Max %";
-            this.Max.Name = "Max";
-            this.Max.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Max.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Max.Width = 44;
+            chartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea4.AxisY.IsStartedFromZero = false;
+            chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea4.Name = "ChartArea1";
+            this.chart4.ChartAreas.Add(chartArea4);
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend4.Name = "Legend1";
+            this.chart4.Legends.Add(legend4);
+            this.chart4.Location = new System.Drawing.Point(410, 236);
+            this.chart4.Name = "chart4";
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series10.Legend = "Legend1";
+            series10.Name = "Close";
+            series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series11.Legend = "Legend1";
+            series11.Name = "High";
+            series11.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series12.Legend = "Legend1";
+            series12.Name = "Low";
+            series12.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            this.chart4.Series.Add(series10);
+            this.chart4.Series.Add(series11);
+            this.chart4.Series.Add(series12);
+            this.chart4.Size = new System.Drawing.Size(392, 270);
+            this.chart4.TabIndex = 13;
+            this.chart4.Text = "chart4";
+            title4.Name = "7 day pre and post earnings";
+            title4.Text = "7 day pre and post earnings";
+            this.chart4.Titles.Add(title4);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 744);
+            this.ClientSize = new System.Drawing.Size(814, 813);
+            this.Controls.Add(this.chart4);
+            this.Controls.Add(this.chart3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.chart2);
@@ -407,6 +507,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,6 +543,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ClosePercent;
         private System.Windows.Forms.DataGridViewTextBoxColumn AHM;
         private System.Windows.Forms.DataGridViewTextBoxColumn Max;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
     }
 }
 
