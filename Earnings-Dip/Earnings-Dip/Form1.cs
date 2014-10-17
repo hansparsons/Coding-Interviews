@@ -57,6 +57,7 @@ namespace Earnings_Dip
             chart3.Series["Close"].Points.Clear();
             chart3.Series["High"].Points.Clear();
             chart3.Series["Low"].Points.Clear();
+
             chart3.Refresh();
 
             // clear the data in the charts
@@ -79,22 +80,30 @@ namespace Earnings_Dip
             PopulateSevenDayChart(listDates2, stockFileName2, chart4);
         }
 
+        public DateTime ReturnLastValidEarningsDate( List<string> listDates)
+        {
+            DateTime today = DateTime.Today;
+
+            foreach (string date in listDates)
+            { 
+               if (Convert.ToDateTime(date) < today)
+               {
+                   return Convert.ToDateTime(date);
+               }
+                
+            }
+
+            return today; // todo: this is an error case that i need to handle
+        }
         public void PopulateSevenDayChart(List<string> listDates, string stockFileName, Chart myChart)
         {
             // variable declarations
-            DateTime today = DateTime.Today;
-            DateTime latestEarningsDate = DateTime.Today;
-            int i = 0;
+
             string tempString;
             string[] tempArray;
-            
-            // find the latest valid earnings date
-            do
-            {
-                latestEarningsDate = Convert.ToDateTime(listDates[i]);
-                i++;
-            } while (Convert.ToDateTime(listDates[i]) > today);
 
+            DateTime latestEarningsDate = ReturnLastValidEarningsDate(listDates);
+     
             // open the stock file for read
             FileStream dataFile = File.Open(@stockFileName, FileMode.Open);
             StreamReader dataStream = new StreamReader(dataFile);
@@ -142,6 +151,7 @@ namespace Earnings_Dip
                 {
                     
                     indexOfEarningsDate = historicalClosePrice.Rows.IndexOf(row);
+                    //need to add a break here
                 }
             }
 
@@ -178,39 +188,30 @@ namespace Earnings_Dip
             myChart.DataSource = sevenDayClosePrice;
             myChart.DataBind();
 
-            // Instantiate new strip line
-            StripLine stripLine1 = new StripLine();
+            myChart.ChartAreas[0].AxisX.StripLines.Clear();
+            myChart.ChartAreas[0].AxisY.StripLines.Clear();
 
+
+            // instantiate new strip line
+            StripLine stripLine1 = new StripLine();
             stripLine1.Interval = 0;
             stripLine1.IntervalOffset = myChart.DataManipulator.Statistics.Mean(myChart.Series[0].Name);
-            //stripLine1.IntervalOffset = latestEarningsDate.ToOADate();//DateTime.Today.ToOADate();
-
-            stripLine1.BackColor = Color.DarkGreen;
-            stripLine1.StripWidth = .25;
-
-            // Set text properties for the threshold line
+            stripLine1.BorderColor = Color.Black;
+            stripLine1.StripWidth = 0.0;
             stripLine1.Text = "Mean";
-            stripLine1.ForeColor = Color.Black;
-
-            // Add the strip line to the chart
+            
+            // add the strip line to the chart
             myChart.ChartAreas[0].AxisY.StripLines.Add(stripLine1);
 
-            // Instantiate new strip line
+            // instantiate new strip line
             StripLine stripLine2 = new StripLine();
-
             stripLine2.Interval = 0;
-            //stripLine2.IntervalOffset = myChart.DataManipulator.Statistics.Mean(myChart.Series[0].Name);
-            stripLine2.IntervalOffset = latestEarningsDate.ToOADate();//DateTime.Today.ToOADate();
-
-            stripLine2.BackColor = Color.DarkGreen;
-            stripLine2.StripWidth = .25;
-
-            // Set text properties for the threshold line
+            stripLine2.IntervalOffset = latestEarningsDate.ToOADate();
+            stripLine2.BorderColor = Color.Black;
+            stripLine2.StripWidth = 0.0;
             stripLine2.Text = "Earnings";
-            //stripLine2.ForeColor = Color.Black;
             
-            // Add the strip line to the chart
-            //chart1.ChartAreas[0].AxisY.StripLines.Add(stripLine1);
+            // add the strip line to the chart
             myChart.ChartAreas[0].AxisX.StripLines.Add(stripLine2);
            
         }
