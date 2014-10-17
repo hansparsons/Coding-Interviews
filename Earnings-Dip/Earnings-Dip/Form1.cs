@@ -53,6 +53,18 @@ namespace Earnings_Dip
             chart2.Series["Max %"].Points.Clear();
             chart2.Refresh();
 
+            // clear the data in the charts
+            chart3.Series["Close"].Points.Clear();
+            chart3.Series["High"].Points.Clear();
+            chart3.Series["Low"].Points.Clear();
+            chart3.Refresh();
+
+            // clear the data in the charts
+            chart4.Series["Close"].Points.Clear();
+            chart4.Series["High"].Points.Clear();
+            chart4.Series["Low"].Points.Clear();
+            chart4.Refresh();
+
             // using yahoo finance create a data file that contains the stock history
             PullStockInfoIntoFile(stockSymbol, stockFilePath, stockFileName);
             PullStockInfoIntoFile(stockSymbol2, stockFilePath, stockFileName2);
@@ -143,13 +155,13 @@ namespace Earnings_Dip
 
             for (int sevenday = 7; sevenday > 0; sevenday--)
             {
-                sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[58 - sevenday]["Date"], historicalClosePrice.Rows[58 - sevenday]["HighPrice"].ToString(), historicalClosePrice.Rows[58 - sevenday]["LowPrice"].ToString(), historicalClosePrice.Rows[58 - sevenday]["ClosePrice"].ToString()); 
+                sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[indexOfEarningsDate + sevenday]["Date"], historicalClosePrice.Rows[indexOfEarningsDate + sevenday]["HighPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate + sevenday]["LowPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate + sevenday]["ClosePrice"].ToString()); 
             }
-            sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[58]["Date"], historicalClosePrice.Rows[58]["HighPrice"].ToString(), historicalClosePrice.Rows[58]["LowPrice"].ToString(), historicalClosePrice.Rows[58]["ClosePrice"].ToString());
+            sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[indexOfEarningsDate]["Date"], historicalClosePrice.Rows[indexOfEarningsDate]["HighPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate]["LowPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate]["ClosePrice"].ToString());
 
             for (int sevenday = 1; sevenday < 8; sevenday++)
             {
-                sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[58 + sevenday]["Date"], historicalClosePrice.Rows[58 + sevenday]["HighPrice"].ToString(), historicalClosePrice.Rows[58 + sevenday]["LowPrice"].ToString(), historicalClosePrice.Rows[58 + sevenday]["ClosePrice"].ToString());
+                sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[indexOfEarningsDate - sevenday]["Date"], historicalClosePrice.Rows[indexOfEarningsDate - sevenday]["HighPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate - sevenday]["LowPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate - sevenday]["ClosePrice"].ToString());
             }
 
             // bind the sevenDayClosePrice DataTable to chart3
@@ -166,6 +178,40 @@ namespace Earnings_Dip
             myChart.DataSource = sevenDayClosePrice;
             myChart.DataBind();
 
+            // Instantiate new strip line
+            StripLine stripLine1 = new StripLine();
+
+            stripLine1.Interval = 0;
+            stripLine1.IntervalOffset = myChart.DataManipulator.Statistics.Mean(myChart.Series[0].Name);
+            //stripLine1.IntervalOffset = latestEarningsDate.ToOADate();//DateTime.Today.ToOADate();
+
+            stripLine1.BackColor = Color.DarkGreen;
+            stripLine1.StripWidth = .25;
+
+            // Set text properties for the threshold line
+            stripLine1.Text = "Mean";
+            stripLine1.ForeColor = Color.Black;
+
+            // Add the strip line to the chart
+            myChart.ChartAreas[0].AxisY.StripLines.Add(stripLine1);
+
+            // Instantiate new strip line
+            StripLine stripLine2 = new StripLine();
+
+            stripLine2.Interval = 0;
+            //stripLine2.IntervalOffset = myChart.DataManipulator.Statistics.Mean(myChart.Series[0].Name);
+            stripLine2.IntervalOffset = latestEarningsDate.ToOADate();//DateTime.Today.ToOADate();
+
+            stripLine2.BackColor = Color.DarkGreen;
+            stripLine2.StripWidth = .25;
+
+            // Set text properties for the threshold line
+            stripLine2.Text = "Earnings";
+            //stripLine2.ForeColor = Color.Black;
+            
+            // Add the strip line to the chart
+            //chart1.ChartAreas[0].AxisY.StripLines.Add(stripLine1);
+            myChart.ChartAreas[0].AxisX.StripLines.Add(stripLine2);
            
         }
 
