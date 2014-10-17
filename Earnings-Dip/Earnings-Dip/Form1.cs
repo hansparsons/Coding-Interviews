@@ -169,9 +169,16 @@ namespace Earnings_Dip
             }
             sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[indexOfEarningsDate]["Date"], historicalClosePrice.Rows[indexOfEarningsDate]["HighPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate]["LowPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate]["ClosePrice"].ToString());
 
-            for (int sevenday = 1; sevenday < 8; sevenday++)
+            for (int sevenday = 1; sevenday < 8; sevenday++) 
             {
-                sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[indexOfEarningsDate - sevenday]["Date"], historicalClosePrice.Rows[indexOfEarningsDate - sevenday]["HighPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate - sevenday]["LowPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate - sevenday]["ClosePrice"].ToString());
+                try
+                {
+                    sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[indexOfEarningsDate - sevenday]["Date"], historicalClosePrice.Rows[indexOfEarningsDate - sevenday]["HighPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate - sevenday]["LowPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate - sevenday]["ClosePrice"].ToString());
+                }
+                catch
+                {
+                    //catch if we dont' have more than 14 days of stock info just don't fill up the sevenDayClosePrice data
+                }
             }
 
             // bind the sevenDayClosePrice DataTable to chart3
@@ -258,7 +265,7 @@ namespace Earnings_Dip
 
                         myArray = tempString.Split(',');
 
-                        if (tempString.Substring(0, 4) == "Date")
+                        if ((tempString.Substring(0, 4) == "Date") || (previousString.Substring(0, 4) == "Date"))
                         {
                             //temp hack we need to skip the first row of lables
                         }
@@ -336,15 +343,15 @@ namespace Earnings_Dip
                 }
             }
             myChart.Series[0].XValueType = ChartValueType.DateTime;
-            myChart.ChartAreas[0].AxisX.LabelStyle.Format = "yyyy-MM-dd";
+            //myChart.ChartAreas[0].AxisX.LabelStyle.Format = "yyyy-MM-dd";
             myChart.ChartAreas[0].AxisX.Interval = 3;
             myChart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Months;
             myChart.ChartAreas[0].AxisX.IntervalOffset = 1;
             
             DateTime minDate = Convert.ToDateTime(listDates.Last());
             DateTime maxDate = Convert.ToDateTime(listDates.First());
-            myChart.ChartAreas[0].AxisX.Minimum = minDate.ToOADate();
-            myChart.ChartAreas[0].AxisX.Maximum = maxDate.ToOADate();
+            //myChart.ChartAreas[0].AxisX.Minimum = minDate.ToOADate();
+            //myChart.ChartAreas[0].AxisX.Maximum = maxDate.ToOADate();
             
 
             myChart.DataSource = chartTable;
