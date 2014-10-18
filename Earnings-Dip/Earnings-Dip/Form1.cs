@@ -187,7 +187,9 @@ namespace Earnings_Dip
             }
 
             // bind the sevenDayClosePrice DataTable to chart3
-            
+
+            myChart.Titles.Clear();
+            myChart.Titles.Add("7 day pre and post trends for " + latestEarningsDate.ToShortDateString());
             myChart.Series["High"].XValueMember = "Date";
             myChart.Series["High"].YValueMembers = "HighPrice";
 
