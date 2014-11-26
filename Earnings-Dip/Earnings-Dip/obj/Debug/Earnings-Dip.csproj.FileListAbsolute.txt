@@ -1,0 +1,13 @@
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Debug\Earnings_Dip.Form1.resources
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Debug\Earnings_Dip.Properties.Resources.resources
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Debug\Earnings-Dip.csproj.GenerateResource.Cache
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Debug\Earnings-Dip.exe.manifest
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Debug\Earnings-Dip.exe
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Debug\Earnings-Dip.pdb
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\bin\Debug\Earnings-Dip.exe.config
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\bin\Debug\Earnings-Dip.exe.manifest
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\bin\Debug\Earnings-Dip.application
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\bin\Debug\Earnings-Dip.exe
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\bin\Debug\Earnings-Dip.pdb
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Debug\Earnings-Dip.csprojResolveAssemblyReference.cache
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Debug\Earnings-Dip.application

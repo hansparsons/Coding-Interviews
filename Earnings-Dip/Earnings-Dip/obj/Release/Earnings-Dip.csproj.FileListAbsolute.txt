@@ -1,0 +1,14 @@
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\bin\Release\StockPriceDB.mdf
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\bin\Release\StockPriceDB_log.ldf
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\bin\Release\Earnings-Dip.exe.config
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\bin\Release\Earnings-Dip.exe.manifest
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\bin\Release\Earnings-Dip.application
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\bin\Release\Earnings-Dip.exe
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\bin\Release\Earnings-Dip.pdb
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Release\Earnings_Dip.Form1.resources
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Release\Earnings_Dip.Properties.Resources.resources
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Release\Earnings-Dip.csproj.GenerateResource.Cache
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Release\Earnings-Dip.exe.manifest
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Release\Earnings-Dip.application
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Release\Earnings-Dip.exe
+C:\Users\hans\Documents\GitHub\Coding-Interviews\Earnings-Dip\Earnings-Dip\obj\Release\Earnings-Dip.pdb
