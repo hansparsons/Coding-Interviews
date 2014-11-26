@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.Configuration;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,6 +11,8 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Net;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Earnings_Dip
 {
@@ -19,6 +21,7 @@ namespace Earnings_Dip
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -83,19 +86,142 @@ namespace Earnings_Dip
                 PopulateListBox(listDates2, stockFileName2, listBox2, chart2, dataGridView2);
                 PopulateSevenDayChart(listDates2, stockFileName2, chart4);
             }
+
+            ImportPriceDataIntoSQL(stockSymbol);
+            CalculateMovingAverages();
+
         }
 
-        public DateTime ReturnLastValidEarningsDate( List<string> listDates)
+        public void CalculateMovingAverages()
+        {
+
+            int y;
+
+            for (int x = 0; x < 201; x++)
+            {
+                y = x + 199;
+                string sqlstring = "UPDATE [Table] SET MovingDayAveTwo=(SELECT AVG(Adj_Close) AS MovingAverage FROM [Table] WHERE StockQuote_Id BETWEEN " + Convert.ToString(x) + " AND " + Convert.ToString(y) + ") WHERE StockQuote_Id=" + Convert.ToString(x);
+
+                using (SqlConnection connection = new SqlConnection(global::Earnings_Dip.Properties.Settings.Default.StockPriceDBConnectionString))
+
+                using (SqlCommand command = new SqlCommand(sqlstring, connection))
+                {
+                    connection.Open();
+                    // Todo: figure out how to fill out rows accurately
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+
+            for (int x = 0; x < 51; x++)
+            {
+                y = x + 49;
+                string sqlstring = "UPDATE [Table] SET MovingDayAveFifty=(SELECT AVG(Adj_Close) AS MovingAverage FROM [Table] WHERE StockQuote_Id BETWEEN " + Convert.ToString(x) + " AND " + Convert.ToString(y) + ") WHERE StockQuote_Id=" + Convert.ToString(x);
+
+                using (SqlConnection connection = new SqlConnection(global::Earnings_Dip.Properties.Settings.Default.StockPriceDBConnectionString))
+
+                using (SqlCommand command = new SqlCommand(sqlstring, connection))
+                {
+                    connection.Open();
+                    // Todo: figure out how to fill out rows accurately
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+
+        }
+
+        public void ImportPriceDataIntoSQL(string stockSymbol)
+        {
+            SqlConnection conn = new SqlConnection(global::Earnings_Dip.Properties.Settings.Default.StockPriceDBConnectionString);
+            string sqlTrunc = "TRUNCATE TABLE [Table]";
+            SqlCommand cmd = new SqlCommand(sqlTrunc, conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            string stockTempString = String.Empty;
+            string[] stockTempArray;
+
+            // open the stock file for read
+            FileStream dataFile = File.Open(stockSymbol + ".csv", FileMode.Open);
+            StreamReader dataStream = new StreamReader(dataFile);
+            SqlConnection cn = new SqlConnection(global::Earnings_Dip.Properties.Settings.Default.StockPriceDBConnectionString);
+            int x = -1;
+
+            try
+            {
+                cn.Open();
+                //fill the historicalDataTable with close stock price
+                while ((stockTempString = dataStream.ReadLine()) != null)
+                {
+                    x += 1;
+
+                    stockTempArray = stockTempString.Split(',');
+
+                    if (stockTempString.Substring(0, 4) == "Date")
+                    {
+                        //temp hack we need to skip the first row of lables
+                    }
+                    else
+                    {
+                        string sql = "INSERT INTO [Table] (StockQuote_Id, StockDate, OpenPrice, HighPrice, LowPrice, ClosePrice, Volume, Adj_Close, StockQuote) VALUES(@stockName_Id, @stockDate , @openPrice ,@highPrice, @lowPrice ,@closePrice, @volume, @adj_Close, @stockQuote)";
+
+                        SqlCommand exeSql = new SqlCommand(sql, cn);
+
+                        exeSql.Parameters.AddWithValue("@stockName_Id", x);
+                        exeSql.Parameters.AddWithValue("@stockDate", Convert.ToDateTime(stockTempArray[0]).ToShortDateString());
+                        exeSql.Parameters.AddWithValue("@openPrice", (Convert.ToDecimal(stockTempArray[1])));
+                        exeSql.Parameters.AddWithValue("@highPrice", (Convert.ToDecimal(stockTempArray[2])));
+                        exeSql.Parameters.AddWithValue("@lowPrice", (Convert.ToDecimal(stockTempArray[3])));
+                        exeSql.Parameters.AddWithValue("@closePrice", (Convert.ToDecimal(stockTempArray[4])));
+                        exeSql.Parameters.AddWithValue("@volume", (Convert.ToDecimal(stockTempArray[5])));
+                        exeSql.Parameters.AddWithValue("@adj_Close", (Convert.ToDecimal(stockTempArray[6])));
+                        exeSql.Parameters.AddWithValue("@stockQuote", stockSymbol);
+
+                        exeSql.ExecuteNonQuery();
+                    }
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+            }
+            finally
+            {
+
+
+                // TODO: This line of code loads data into the 'stockPriceDBDataSet.Table' table. You can move, or remove it, as needed.
+                this.tableTableAdapter.Fill(this.stockPriceDBDataSet.Table);
+                //this.tableTableAdapter.Update(StockPriceDBDataSet.TableDataTable )
+
+
+
+                // close the sql db
+                cn.Close();
+
+                //close the stock file
+                dataStream.Close();
+                dataFile.Close();
+            }
+
+        }
+
+        public DateTime ReturnLastValidEarningsDate(List<string> listDates)
         {
             DateTime today = DateTime.Today;
 
             foreach (string date in listDates)
-            { 
-               if (Convert.ToDateTime(date) < today)
-               {
-                   return Convert.ToDateTime(date);
-               }
-                
+            {
+                if (Convert.ToDateTime(date) < today)
+                {
+                    return Convert.ToDateTime(date);
+                }
+
             }
 
             return today; // todo: this is an error case that i need to handle
@@ -108,7 +234,7 @@ namespace Earnings_Dip
             string[] tempArray;
 
             DateTime latestEarningsDate = ReturnLastValidEarningsDate(listDates);
-     
+
             // open the stock file for read
             FileStream dataFile = File.Open(@stockFileName, FileMode.Open);
             StreamReader dataStream = new StreamReader(dataFile);
@@ -126,10 +252,10 @@ namespace Earnings_Dip
                 tempArray = tempString.Split(',');
 
                 if (tempString.Substring(0, 4) == "Date")
-                        {
+                {
                     //temp hack we need to skip the first row of lables
                 }
-                else 
+                else
                 {
 
                     historicalClosePrice.Rows.Add(Convert.ToDateTime(tempArray[0]).ToShortDateString(), (Convert.ToDecimal(tempArray[2])), (Convert.ToDecimal(tempArray[3])), (Convert.ToDecimal(tempArray[4])));
@@ -146,15 +272,15 @@ namespace Earnings_Dip
 
             DateTime foo3 = DateTime.Today;
 
-             // we now need to find the index of the lastEarningsDate in the historicalClosePrice table
+            // we now need to find the index of the lastEarningsDate in the historicalClosePrice table
             foreach (DataRow row in historicalClosePrice.Rows)
             {
                 foo3 = (Convert.ToDateTime(row.ItemArray[0]));
                 datesMatch = DateTime.Compare(foo3, latestEarningsDate);
 
-                if ( datesMatch == 0)
+                if (datesMatch == 0)
                 {
-                    
+
                     indexOfEarningsDate = historicalClosePrice.Rows.IndexOf(row);
                     //need to add a break here
                 }
@@ -170,11 +296,11 @@ namespace Earnings_Dip
 
             for (int sevenday = 7; sevenday > 0; sevenday--)
             {
-                sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[indexOfEarningsDate + sevenday]["Date"], historicalClosePrice.Rows[indexOfEarningsDate + sevenday]["HighPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate + sevenday]["LowPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate + sevenday]["ClosePrice"].ToString()); 
+                sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[indexOfEarningsDate + sevenday]["Date"], historicalClosePrice.Rows[indexOfEarningsDate + sevenday]["HighPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate + sevenday]["LowPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate + sevenday]["ClosePrice"].ToString());
             }
             sevenDayClosePrice.Rows.Add(historicalClosePrice.Rows[indexOfEarningsDate]["Date"], historicalClosePrice.Rows[indexOfEarningsDate]["HighPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate]["LowPrice"].ToString(), historicalClosePrice.Rows[indexOfEarningsDate]["ClosePrice"].ToString());
 
-            for (int sevenday = 1; sevenday < 8; sevenday++) 
+            for (int sevenday = 1; sevenday < 8; sevenday++)
             {
                 try
                 {
@@ -213,7 +339,7 @@ namespace Earnings_Dip
             stripLine1.BorderColor = Color.Black;
             stripLine1.StripWidth = 0.0;
             stripLine1.Text = "Mean";
-            
+
             // add the strip line to the chart
             myChart.ChartAreas[0].AxisY.StripLines.Add(stripLine1);
 
@@ -224,10 +350,10 @@ namespace Earnings_Dip
             stripLine2.BorderColor = Color.Black;
             stripLine2.StripWidth = 0.0;
             stripLine2.Text = "Earnings";
-            
+
             // add the strip line to the chart
             myChart.ChartAreas[0].AxisX.StripLines.Add(stripLine2);
-           
+
         }
 
         public void PopulateListBox(List<string> listDates, string stockFileName, ListBox myListBox, Chart myChart, DataGridView myDataGridView)
@@ -282,15 +408,15 @@ namespace Earnings_Dip
                             previousArray = previousString.Split(',');
                             // calculate close %
                             //decimal closePercent = (((Convert.ToDecimal(previousArray[4])) - (Convert.ToDecimal(myArray[4]))) / (Convert.ToDecimal(previousArray[4]))) * 100;
-                            decimal closePercent = (((Convert.ToDecimal(previousArray[4])) / (Convert.ToDecimal(myArray[4]))) -1 ) * 100;
-                            closePercent = Math.Round(closePercent,2);
+                            decimal closePercent = (((Convert.ToDecimal(previousArray[4])) / (Convert.ToDecimal(myArray[4]))) - 1) * 100;
+                            closePercent = Math.Round(closePercent, 2);
 
                             // calculate the After Hours Move
-                            decimal AHM = (((Convert.ToDecimal(previousArray[1])) / (Convert.ToDecimal(myArray[4]))) - 1 ) * 100 ;
+                            decimal AHM = (((Convert.ToDecimal(previousArray[1])) / (Convert.ToDecimal(myArray[4]))) - 1) * 100;
                             AHM = Math.Round(AHM, 2);
 
                             // calculate the Max Percentage
-                            decimal Max = ((Convert.ToDecimal(previousArray[2])) / (Convert.ToDecimal(myArray[4])) -1 ) * 100;
+                            decimal Max = ((Convert.ToDecimal(previousArray[2])) / (Convert.ToDecimal(myArray[4])) - 1) * 100;
                             Max = Math.Round(Max, 2);
 
                             // Here we add five DataRows.
@@ -354,12 +480,12 @@ namespace Earnings_Dip
             myChart.ChartAreas[0].AxisX.Interval = 3;
             myChart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Months;
             myChart.ChartAreas[0].AxisX.IntervalOffset = 1;
-            
+
             DateTime minDate = Convert.ToDateTime(listDates.Last());
             DateTime maxDate = Convert.ToDateTime(listDates.First());
             //myChart.ChartAreas[0].AxisX.Minimum = minDate.ToOADate();
             //myChart.ChartAreas[0].AxisX.Maximum = maxDate.ToOADate();
-            
+
 
             myChart.DataSource = chartTable;
             myChart.Series["Close %"].XValueMember = "Date";
@@ -389,7 +515,7 @@ namespace Earnings_Dip
 
             // kick off a webclient that returns all the stock info into a file
             WebClient webClient = new WebClient();
-            
+
             string uriString = "http://ichart.yahoo.com/table.csv?s=" + stockSymbol;
             Uri url = new Uri(@uriString);
 
@@ -405,27 +531,30 @@ namespace Earnings_Dip
                 MessageBox.Show(ex.ToString());
             }
         }
- 
+
         public List<string> BuildListOfDates(string urlString, string stockSymbol)
         {
-            WebClient wc = new WebClient();
 
+
+            //SourceTest = webpage.DownloadString(source_url);
+            WebClient wc = new WebClient();
+            wc.Headers[HttpRequestHeader.UserAgent] = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.121 Safari/535.2";
             // spawn a webclient scrape of the site and store it in a string
             byte[] raw = wc.DownloadData(urlString);
             string input = System.Text.Encoding.UTF8.GetString(raw);
 
             // using regex pair down the into the areas where the dates are located    
             MatchCollection matchesDates = Regex.Matches(input, @"<td>(.*?)/></td>");
-            
+
             // build a list that contains all the dates         
             List<string> listDates = new List<string>();
-                 
+
             foreach (Match match in matchesDates)
             {
                 if (((match.Value.Substring(0, 4)) == "<td>")) //if true i'm pretty sure a valid date is next
-                     {
-                         listDates.Add (Regex.Match(match.Value, @"<td>(.*?)<img src").Groups[1].Value);
-                     }  
+                {
+                    listDates.Add(Regex.Match(match.Value, @"<td>(.*?)<img src").Groups[1].Value);
+                }
             }
             if (listDates.Count == 0)
             {
@@ -449,6 +578,8 @@ namespace Earnings_Dip
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'stockPriceDBDataSet.Table' table. You can move, or remove it, as needed.
+            this.tableTableAdapter.Fill(this.stockPriceDBDataSet.Table);
 
         }
 
@@ -458,6 +589,16 @@ namespace Earnings_Dip
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void chart5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TwoHundredDay_Click(object sender, EventArgs e)
         {
 
         }

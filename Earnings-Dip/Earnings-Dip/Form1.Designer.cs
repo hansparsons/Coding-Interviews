@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -54,6 +55,24 @@
             System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -83,17 +102,71 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pricechart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pricechart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.stockHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stockHistoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.stockHistoryBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.stockDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stockPriceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.stockPriceDBDataSet = new Earnings_Dip.StockPriceDBDataSet();
+            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableTableAdapter = new Earnings_Dip.StockPriceDBDataSetTableAdapters.TableTableAdapter();
+            this.tableBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableBindingSource7 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableBindingSource8 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.stockQuoteIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.highPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lowPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.closePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockQuoteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movingDayAveTwoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movingDayAveFiftyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableBindingSource9 = new System.Windows.Forms.BindingSource(this.components);
+            this.TwoHundredDay = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tableBindingSource10 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pricechart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pricechart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockHistoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockHistoryBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockHistoryBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockDBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockPriceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockPriceDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TwoHundredDay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource10)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(712, 8);
+            this.button1.Location = new System.Drawing.Point(1170, 23);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 26);
             this.button1.TabIndex = 1;
@@ -138,7 +211,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(407, 15);
+            this.label2.Location = new System.Drawing.Point(865, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 7;
@@ -146,7 +219,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(485, 12);
+            this.textBox2.Location = new System.Drawing.Point(943, 27);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(138, 20);
             this.textBox2.TabIndex = 6;
@@ -198,7 +271,7 @@
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend2.Name = "Legend1";
             this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(410, 512);
+            this.chart2.Location = new System.Drawing.Point(868, 527);
             this.chart2.Name = "chart2";
             series4.ChartArea = "ChartArea1";
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -330,7 +403,7 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
-            this.dataGridView2.Location = new System.Drawing.Point(410, 38);
+            this.dataGridView2.Location = new System.Drawing.Point(868, 53);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.Size = new System.Drawing.Size(392, 192);
@@ -455,7 +528,7 @@
             legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend4.Name = "Legend1";
             this.chart4.Legends.Add(legend4);
-            this.chart4.Location = new System.Drawing.Point(410, 236);
+            this.chart4.Location = new System.Drawing.Point(868, 251);
             this.chart4.Name = "chart4";
             series10.ChartArea = "ChartArea1";
             series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -482,11 +555,281 @@
             title4.Text = "7 day pre and post earnings";
             this.chart4.Titles.Add(title4);
             // 
+            // pricechart1
+            // 
+            chartArea5.AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea5.AxisY.IsStartedFromZero = false;
+            chartArea5.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea5.Name = "ChartArea1";
+            this.pricechart1.ChartAreas.Add(chartArea5);
+            legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend5.Name = "Legend1";
+            this.pricechart1.Legends.Add(legend5);
+            this.pricechart1.Location = new System.Drawing.Point(427, 38);
+            this.pricechart1.Name = "pricechart1";
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series13.Legend = "Legend1";
+            series13.Name = "Close";
+            series13.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series14.Legend = "Legend1";
+            series14.Name = "High";
+            series14.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series15.ChartArea = "ChartArea1";
+            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series15.Legend = "Legend1";
+            series15.Name = "Low";
+            series15.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            this.pricechart1.Series.Add(series13);
+            this.pricechart1.Series.Add(series14);
+            this.pricechart1.Series.Add(series15);
+            this.pricechart1.Size = new System.Drawing.Size(392, 270);
+            this.pricechart1.TabIndex = 14;
+            this.pricechart1.Text = "200day1";
+            title5.Name = "7 day pre and post earnings";
+            title5.Text = "7 day pre and post earnings";
+            this.pricechart1.Titles.Add(title5);
+            this.pricechart1.Click += new System.EventHandler(this.chart5_Click);
+            // 
+            // pricechart2
+            // 
+            chartArea6.AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea6.AxisY.IsStartedFromZero = false;
+            chartArea6.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea6.Name = "ChartArea1";
+            this.pricechart2.ChartAreas.Add(chartArea6);
+            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend6.Name = "Legend1";
+            this.pricechart2.Legends.Add(legend6);
+            this.pricechart2.Location = new System.Drawing.Point(427, 324);
+            this.pricechart2.Name = "pricechart2";
+            series16.ChartArea = "ChartArea1";
+            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series16.Legend = "Legend1";
+            series16.Name = "Close";
+            series16.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series17.ChartArea = "ChartArea1";
+            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series17.Legend = "Legend1";
+            series17.Name = "High";
+            series17.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series18.ChartArea = "ChartArea1";
+            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series18.Legend = "Legend1";
+            series18.Name = "Low";
+            series18.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            this.pricechart2.Series.Add(series16);
+            this.pricechart2.Series.Add(series17);
+            this.pricechart2.Series.Add(series18);
+            this.pricechart2.Size = new System.Drawing.Size(392, 270);
+            this.pricechart2.TabIndex = 15;
+            this.pricechart2.Text = "200day2";
+            title6.Name = "7 day pre and post earnings";
+            title6.Text = "7 day pre and post earnings";
+            this.pricechart2.Titles.Add(title6);
+            // 
+            // tableBindingSource1
+            // 
+            this.tableBindingSource1.DataMember = "Table";
+            this.tableBindingSource1.DataSource = this.stockPriceDBDataSet;
+            // 
+            // stockPriceDBDataSet
+            // 
+            this.stockPriceDBDataSet.DataSetName = "StockPriceDBDataSet";
+            this.stockPriceDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableBindingSource
+            // 
+            this.tableBindingSource.DataMember = "Table";
+            this.tableBindingSource.DataSource = this.stockPriceDBDataSet;
+            // 
+            // tableTableAdapter
+            // 
+            this.tableTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableBindingSource2
+            // 
+            this.tableBindingSource2.DataMember = "Table";
+            this.tableBindingSource2.DataSource = this.stockPriceDBDataSet;
+            // 
+            // tableBindingSource7
+            // 
+            this.tableBindingSource7.DataMember = "Table";
+            this.tableBindingSource7.DataSource = this.stockPriceDBDataSet;
+            // 
+            // tableBindingSource6
+            // 
+            this.tableBindingSource6.DataMember = "Table";
+            this.tableBindingSource6.DataSource = this.stockPriceDBDataSet;
+            // 
+            // tableBindingSource5
+            // 
+            this.tableBindingSource5.DataMember = "Table";
+            this.tableBindingSource5.DataSource = this.stockPriceDBDataSet;
+            // 
+            // tableBindingSource4
+            // 
+            this.tableBindingSource4.DataMember = "Table";
+            this.tableBindingSource4.DataSource = this.stockPriceDBDataSet;
+            // 
+            // tableBindingSource3
+            // 
+            this.tableBindingSource3.DataMember = "Table";
+            this.tableBindingSource3.DataSource = this.stockPriceDBDataSet;
+            // 
+            // tableBindingSource8
+            // 
+            this.tableBindingSource8.DataMember = "Table";
+            this.tableBindingSource8.DataSource = this.stockPriceDBDataSet;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.stockQuoteIdDataGridViewTextBoxColumn,
+            this.stockDateDataGridViewTextBoxColumn,
+            this.openPriceDataGridViewTextBoxColumn,
+            this.highPriceDataGridViewTextBoxColumn,
+            this.lowPriceDataGridViewTextBoxColumn,
+            this.closePriceDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.stockQuoteDataGridViewTextBoxColumn,
+            this.movingDayAveTwoDataGridViewTextBoxColumn,
+            this.movingDayAveFiftyDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.tableBindingSource9;
+            this.dataGridView3.Location = new System.Drawing.Point(-4, 616);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(1225, 150);
+            this.dataGridView3.TabIndex = 16;
+            // 
+            // stockQuoteIdDataGridViewTextBoxColumn
+            // 
+            this.stockQuoteIdDataGridViewTextBoxColumn.DataPropertyName = "StockQuote_Id";
+            this.stockQuoteIdDataGridViewTextBoxColumn.HeaderText = "StockQuote_Id";
+            this.stockQuoteIdDataGridViewTextBoxColumn.Name = "stockQuoteIdDataGridViewTextBoxColumn";
+            // 
+            // stockDateDataGridViewTextBoxColumn
+            // 
+            this.stockDateDataGridViewTextBoxColumn.DataPropertyName = "StockDate";
+            this.stockDateDataGridViewTextBoxColumn.HeaderText = "StockDate";
+            this.stockDateDataGridViewTextBoxColumn.Name = "stockDateDataGridViewTextBoxColumn";
+            // 
+            // openPriceDataGridViewTextBoxColumn
+            // 
+            this.openPriceDataGridViewTextBoxColumn.DataPropertyName = "OpenPrice";
+            this.openPriceDataGridViewTextBoxColumn.HeaderText = "OpenPrice";
+            this.openPriceDataGridViewTextBoxColumn.Name = "openPriceDataGridViewTextBoxColumn";
+            // 
+            // highPriceDataGridViewTextBoxColumn
+            // 
+            this.highPriceDataGridViewTextBoxColumn.DataPropertyName = "HighPrice";
+            this.highPriceDataGridViewTextBoxColumn.HeaderText = "HighPrice";
+            this.highPriceDataGridViewTextBoxColumn.Name = "highPriceDataGridViewTextBoxColumn";
+            // 
+            // lowPriceDataGridViewTextBoxColumn
+            // 
+            this.lowPriceDataGridViewTextBoxColumn.DataPropertyName = "LowPrice";
+            this.lowPriceDataGridViewTextBoxColumn.HeaderText = "LowPrice";
+            this.lowPriceDataGridViewTextBoxColumn.Name = "lowPriceDataGridViewTextBoxColumn";
+            // 
+            // closePriceDataGridViewTextBoxColumn
+            // 
+            this.closePriceDataGridViewTextBoxColumn.DataPropertyName = "ClosePrice";
+            this.closePriceDataGridViewTextBoxColumn.HeaderText = "ClosePrice";
+            this.closePriceDataGridViewTextBoxColumn.Name = "closePriceDataGridViewTextBoxColumn";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "Volume";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Volume";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Adj_Close";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Adj_Close";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // stockQuoteDataGridViewTextBoxColumn
+            // 
+            this.stockQuoteDataGridViewTextBoxColumn.DataPropertyName = "StockQuote";
+            this.stockQuoteDataGridViewTextBoxColumn.HeaderText = "StockQuote";
+            this.stockQuoteDataGridViewTextBoxColumn.Name = "stockQuoteDataGridViewTextBoxColumn";
+            // 
+            // movingDayAveTwoDataGridViewTextBoxColumn
+            // 
+            this.movingDayAveTwoDataGridViewTextBoxColumn.DataPropertyName = "MovingDayAveTwo";
+            this.movingDayAveTwoDataGridViewTextBoxColumn.HeaderText = "MovingDayAveTwo";
+            this.movingDayAveTwoDataGridViewTextBoxColumn.Name = "movingDayAveTwoDataGridViewTextBoxColumn";
+            // 
+            // movingDayAveFiftyDataGridViewTextBoxColumn
+            // 
+            this.movingDayAveFiftyDataGridViewTextBoxColumn.DataPropertyName = "MovingDayAveFifty";
+            this.movingDayAveFiftyDataGridViewTextBoxColumn.HeaderText = "MovingDayAveFifty";
+            this.movingDayAveFiftyDataGridViewTextBoxColumn.Name = "movingDayAveFiftyDataGridViewTextBoxColumn";
+            // 
+            // tableBindingSource9
+            // 
+            this.tableBindingSource9.DataMember = "Table";
+            this.tableBindingSource9.DataSource = this.stockPriceDBDataSet;
+            // 
+            // TwoHundredDay
+            // 
+            chartArea7.AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea7.AxisY.IsStartedFromZero = false;
+            chartArea7.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea7.Name = "ChartArea1";
+            this.TwoHundredDay.ChartAreas.Add(chartArea7);
+            this.TwoHundredDay.DataSource = this.tableBindingSource10;
+            legend7.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend7.Name = "Legend1";
+            this.TwoHundredDay.Legends.Add(legend7);
+            this.TwoHundredDay.Location = new System.Drawing.Point(470, 277);
+            this.TwoHundredDay.Name = "TwoHundredDay";
+            series19.ChartArea = "ChartArea1";
+            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series19.Legend = "Legend1";
+            series19.Name = "Close";
+            series19.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series20.ChartArea = "ChartArea1";
+            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series20.Legend = "Legend1";
+            series20.Name = "High";
+            series20.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series21.ChartArea = "ChartArea1";
+            series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series21.Legend = "Legend1";
+            series21.Name = "Low";
+            series21.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            this.TwoHundredDay.Series.Add(series19);
+            this.TwoHundredDay.Series.Add(series20);
+            this.TwoHundredDay.Series.Add(series21);
+            this.TwoHundredDay.Size = new System.Drawing.Size(392, 270);
+            this.TwoHundredDay.TabIndex = 17;
+            this.TwoHundredDay.Text = "chart5";
+            title7.Name = "7 day pre and post earnings";
+            title7.Text = "7 day pre and post earnings";
+            this.TwoHundredDay.Titles.Add(title7);
+            this.TwoHundredDay.Click += new System.EventHandler(this.TwoHundredDay_Click);
+            // 
+            // tableBindingSource10
+            // 
+            this.tableBindingSource10.DataMember = "Table";
+            this.tableBindingSource10.DataSource = this.stockPriceDBDataSet;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 813);
+            this.ClientSize = new System.Drawing.Size(1376, 813);
+            this.Controls.Add(this.TwoHundredDay);
+            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.pricechart2);
+            this.Controls.Add(this.pricechart1);
             this.Controls.Add(this.chart4);
             this.Controls.Add(this.chart3);
             this.Controls.Add(this.dataGridView2);
@@ -509,6 +852,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pricechart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pricechart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockHistoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockHistoryBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockHistoryBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockDBDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockPriceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockPriceDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TwoHundredDay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -545,6 +909,55 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Max;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart pricechart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart pricechart2;
+        private System.Windows.Forms.BindingSource stockHistoryBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn openDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn highDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lowDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn closeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn volumeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adjCloseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource stockHistoryBindingSource1;
+        private System.Windows.Forms.BindingSource stockHistoryBindingSource2;
+        private System.Windows.Forms.BindingSource stockDBDataSetBindingSource;
+        private System.Windows.Forms.BindingSource stockPriceBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockNameIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private StockPriceDBDataSet stockPriceDBDataSet;
+        private System.Windows.Forms.BindingSource tableBindingSource;
+        private StockPriceDBDataSetTableAdapters.TableTableAdapter tableTableAdapter;
+        private System.Windows.Forms.BindingSource tableBindingSource1;
+        private System.Windows.Forms.BindingSource tableBindingSource2;
+        private System.Windows.Forms.BindingSource tableBindingSource3;
+        private System.Windows.Forms.BindingSource tableBindingSource4;
+        private System.Windows.Forms.BindingSource tableBindingSource5;
+        private System.Windows.Forms.BindingSource tableBindingSource6;
+        private System.Windows.Forms.BindingSource tableBindingSource7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn movingDayAveDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource tableBindingSource8;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockQuoteIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn openPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn highPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lowPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn closePriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockQuoteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn movingDayAveTwoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn movingDayAveFiftyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource tableBindingSource9;
+        private System.Windows.Forms.DataVisualization.Charting.Chart TwoHundredDay;
+        private System.Windows.Forms.BindingSource tableBindingSource10;
     }
 }
 
