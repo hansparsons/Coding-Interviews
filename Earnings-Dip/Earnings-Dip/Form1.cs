@@ -89,7 +89,9 @@ namespace Earnings_Dip
 
             ImportPriceDataIntoSQL(stockSymbol);
             CalculateMovingAverages();
-
+            PoplulateTwoHundredDayChartFromSQL();
+            PoplulateFiftyDayChartFromSQL();
+            DateTime latestEarningsDate = ReturnLastValidEarningsDate(listDates);
         }
 
         public void CalculateMovingAverages()
@@ -225,6 +227,118 @@ namespace Earnings_Dip
             }
 
             return today; // todo: this is an error case that i need to handle
+        }
+        public void PoplulateLastEarningsChartFromSQL( DateTime lastEarningsDate)
+        {
+            // Create a connection to the "pubs" SQL database located on the 
+
+            // local computer.
+            SqlConnection myConnection = new SqlConnection(global::Earnings_Dip.Properties.Settings.Default.StockPriceDBConnectionString);
+
+            //SqlConnection myConnection = new SqlConnection("server=localhost;" +                    "database=pubs;Trusted_Connection=Yes");
+
+            // Connect to the SQL database using a SQL SELECT query to get all 
+            // the data from the "Authors" table.
+
+            //string sqlStr = "SELECT StockDate, ClosePrice FROM [Table] WHERE StockDate >= DateAdd(month, -6, getdate())";
+            string sqlString = "SELECT StockQuote_Id, StockDate, ClosePrice, HighPrice, LowPrice, MovingDayAveFifty FROM [Table] WHERE StockQuote_Id <= 50";
+            SqlDataAdapter myCommand = new SqlDataAdapter(sqlString, myConnection);
+
+            // Create and fill a DataSet.
+            DataSet ds = new DataSet();
+            myCommand.Fill(ds);
+
+            DataView source = new DataView(ds.Tables[0]);
+            FiftyDay.DataSource = source;
+
+            // set series members names for the X and Y values 
+            FiftyDay.Series[0].XValueMember = "StockDate";
+            FiftyDay.Series[0].YValueMembers = "ClosePrice";
+            FiftyDay.Series[1].XValueMember = "StockDate";
+            FiftyDay.Series[1].YValueMembers = "HighPrice";
+            FiftyDay.Series[2].XValueMember = "StockDate";
+            FiftyDay.Series[2].YValueMembers = "LowPrice";
+            FiftyDay.Series[3].XValueMember = "StockDate";
+            FiftyDay.Series[3].YValueMembers = "MovingDayAveFifty";
+
+            // Populate the chart with data from the data source
+            FiftyDay.DataBind();
+
+        }     
+        public void PoplulateFiftyDayChartFromSQL()
+        {
+            // Create a connection to the "pubs" SQL database located on the 
+
+            // local computer.
+            SqlConnection myConnection = new SqlConnection(global::Earnings_Dip.Properties.Settings.Default.StockPriceDBConnectionString);
+
+            //SqlConnection myConnection = new SqlConnection("server=localhost;" +                    "database=pubs;Trusted_Connection=Yes");
+
+            // Connect to the SQL database using a SQL SELECT query to get all 
+            // the data from the "Authors" table.
+
+            //string sqlStr = "SELECT StockDate, ClosePrice FROM [Table] WHERE StockDate >= DateAdd(month, -6, getdate())";
+            string sqlString = "SELECT StockQuote_Id, StockDate, ClosePrice, HighPrice, LowPrice, MovingDayAveFifty FROM [Table] WHERE StockQuote_Id <= 50";
+            SqlDataAdapter myCommand = new SqlDataAdapter(sqlString, myConnection);
+
+            // Create and fill a DataSet.
+            DataSet ds = new DataSet();
+            myCommand.Fill(ds);
+
+            DataView source = new DataView(ds.Tables[0]);
+            FiftyDay.DataSource = source;
+
+            // set series members names for the X and Y values 
+            FiftyDay.Series[0].XValueMember = "StockDate";
+            FiftyDay.Series[0].YValueMembers = "ClosePrice";
+            FiftyDay.Series[1].XValueMember = "StockDate";
+            FiftyDay.Series[1].YValueMembers = "HighPrice";
+            FiftyDay.Series[2].XValueMember = "StockDate";
+            FiftyDay.Series[2].YValueMembers = "LowPrice";
+            FiftyDay.Series[3].XValueMember = "StockDate";
+            FiftyDay.Series[3].YValueMembers = "MovingDayAveFifty";
+
+            // Populate the chart with data from the data source
+            FiftyDay.DataBind();
+
+        }
+
+        public void PoplulateTwoHundredDayChartFromSQL()
+        {
+            // Create a connection to the "pubs" SQL database located on the 
+
+            // local computer.
+            SqlConnection myConnection = new SqlConnection(global::Earnings_Dip.Properties.Settings.Default.StockPriceDBConnectionString);
+
+            //SqlConnection myConnection = new SqlConnection("server=localhost;" +                    "database=pubs;Trusted_Connection=Yes");
+
+            // Connect to the SQL database using a SQL SELECT query to get all 
+            // the data from the "Authors" table.
+
+            //string sqlStr = "SELECT StockDate, ClosePrice FROM [Table] WHERE StockDate >= DateAdd(month, -6, getdate())";
+            string sqlString = "SELECT StockQuote_Id, StockDate, ClosePrice, HighPrice, LowPrice, MovingDayAveTwo FROM [Table] WHERE StockQuote_Id <= 200";
+            SqlDataAdapter myCommand = new SqlDataAdapter(sqlString, myConnection);
+
+            // Create and fill a DataSet.
+            DataSet ds = new DataSet();
+            myCommand.Fill(ds);
+
+            DataView source = new DataView(ds.Tables[0]);
+            TwoHundredDay.DataSource = source;
+
+            // set series members names for the X and Y values 
+            TwoHundredDay.Series[0].XValueMember = "StockDate";
+            TwoHundredDay.Series[0].YValueMembers = "ClosePrice";
+            TwoHundredDay.Series[1].XValueMember = "StockDate";
+            TwoHundredDay.Series[1].YValueMembers = "HighPrice";
+            TwoHundredDay.Series[2].XValueMember = "StockDate";
+            TwoHundredDay.Series[2].YValueMembers = "LowPrice";
+            TwoHundredDay.Series[3].XValueMember = "StockDate";
+            TwoHundredDay.Series[3].YValueMembers = "MovingDayAveTwo";
+
+            // Populate the chart with data from the data source
+            TwoHundredDay.DataBind();
+
         }
         public void PopulateSevenDayChart(List<string> listDates, string stockFileName, Chart myChart)
         {
@@ -578,6 +692,10 @@ namespace Earnings_Dip
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'stockPriceDBDataSet2.Table' table. You can move, or remove it, as needed.
+            this.tableTableAdapter2.Fill(this.stockPriceDBDataSet2.Table);
+            // TODO: This line of code loads data into the 'stockPriceDBDataSet1.Table' table. You can move, or remove it, as needed.
+            this.tableTableAdapter1.Fill(this.stockPriceDBDataSet1.Table);
             // TODO: This line of code loads data into the 'stockPriceDBDataSet.Table' table. You can move, or remove it, as needed.
             this.tableTableAdapter.Fill(this.stockPriceDBDataSet.Table);
 

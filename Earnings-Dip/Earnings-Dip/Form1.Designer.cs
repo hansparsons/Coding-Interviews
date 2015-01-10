@@ -72,7 +72,22 @@
             System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series27 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series28 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series29 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -135,6 +150,15 @@
             this.tableBindingSource9 = new System.Windows.Forms.BindingSource(this.components);
             this.TwoHundredDay = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableBindingSource10 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableBindingSource11 = new System.Windows.Forms.BindingSource(this.components);
+            this.stockPriceDBDataSet1 = new Earnings_Dip.StockPriceDBDataSet1();
+            this.tableBindingSource12 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableTableAdapter1 = new Earnings_Dip.StockPriceDBDataSet1TableAdapters.TableTableAdapter();
+            this.stockPriceDBDataSet2 = new Earnings_Dip.StockPriceDBDataSet2();
+            this.tableBindingSource13 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableTableAdapter2 = new Earnings_Dip.StockPriceDBDataSet2TableAdapters.TableTableAdapter();
+            this.FiftyDay = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -162,11 +186,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TwoHundredDay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockPriceDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockPriceDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FiftyDay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart5)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1170, 23);
+            this.button1.Location = new System.Drawing.Point(230, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 26);
             this.button1.TabIndex = 1;
@@ -177,9 +208,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(1275, 88);
+            this.listBox1.Location = new System.Drawing.Point(868, 484);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(442, 368);
+            this.listBox1.Size = new System.Drawing.Size(253, 95);
             this.listBox1.TabIndex = 2;
             // 
             // textBox1
@@ -203,15 +234,15 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(1275, 462);
+            this.listBox2.Location = new System.Drawing.Point(1127, 484);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(442, 368);
+            this.listBox2.Size = new System.Drawing.Size(253, 95);
             this.listBox2.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(865, 30);
+            this.label2.Location = new System.Drawing.Point(865, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 7;
@@ -219,7 +250,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(943, 27);
+            this.textBox2.Location = new System.Drawing.Point(943, 12);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(138, 20);
             this.textBox2.TabIndex = 6;
@@ -236,7 +267,7 @@
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(11, 512);
+            this.chart1.Location = new System.Drawing.Point(12, 484);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -254,7 +285,7 @@
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
             this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(392, 270);
+            this.chart1.Size = new System.Drawing.Size(392, 159);
             this.chart1.TabIndex = 8;
             this.chart1.Text = "chart1";
             title1.Name = "Earnings next day history";
@@ -271,7 +302,7 @@
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend2.Name = "Legend1";
             this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(868, 527);
+            this.chart2.Location = new System.Drawing.Point(868, 308);
             this.chart2.Name = "chart2";
             series4.ChartArea = "ChartArea1";
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -288,7 +319,7 @@
             this.chart2.Series.Add(series4);
             this.chart2.Series.Add(series5);
             this.chart2.Series.Add(series6);
-            this.chart2.Size = new System.Drawing.Size(392, 270);
+            this.chart2.Size = new System.Drawing.Size(392, 162);
             this.chart2.TabIndex = 9;
             this.chart2.Text = "chart2";
             title2.Name = "Earnings next day history";
@@ -313,7 +344,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(11, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(392, 192);
+            this.dataGridView1.Size = new System.Drawing.Size(392, 137);
             this.dataGridView1.TabIndex = 10;
             // 
             // Date
@@ -403,10 +434,10 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
-            this.dataGridView2.Location = new System.Drawing.Point(868, 53);
+            this.dataGridView2.Location = new System.Drawing.Point(868, 38);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(392, 192);
+            this.dataGridView2.Size = new System.Drawing.Size(392, 119);
             this.dataGridView2.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn1
@@ -491,7 +522,7 @@
             legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend3.Name = "Legend1";
             this.chart3.Legends.Add(legend3);
-            this.chart3.Location = new System.Drawing.Point(12, 236);
+            this.chart3.Location = new System.Drawing.Point(12, 320);
             this.chart3.Name = "chart3";
             series7.ChartArea = "ChartArea1";
             series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -511,7 +542,7 @@
             this.chart3.Series.Add(series7);
             this.chart3.Series.Add(series8);
             this.chart3.Series.Add(series9);
-            this.chart3.Size = new System.Drawing.Size(392, 270);
+            this.chart3.Size = new System.Drawing.Size(392, 150);
             this.chart3.TabIndex = 12;
             this.chart3.Text = "chart3";
             title3.Name = "7 day pre and post earnings";
@@ -528,7 +559,7 @@
             legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend4.Name = "Legend1";
             this.chart4.Legends.Add(legend4);
-            this.chart4.Location = new System.Drawing.Point(868, 251);
+            this.chart4.Location = new System.Drawing.Point(868, 163);
             this.chart4.Name = "chart4";
             series10.ChartArea = "ChartArea1";
             series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -548,7 +579,7 @@
             this.chart4.Series.Add(series10);
             this.chart4.Series.Add(series11);
             this.chart4.Series.Add(series12);
-            this.chart4.Size = new System.Drawing.Size(392, 270);
+            this.chart4.Size = new System.Drawing.Size(392, 128);
             this.chart4.TabIndex = 13;
             this.chart4.Text = "chart4";
             title4.Name = "7 day pre and post earnings";
@@ -565,7 +596,7 @@
             legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend5.Name = "Legend1";
             this.pricechart1.Legends.Add(legend5);
-            this.pricechart1.Location = new System.Drawing.Point(427, 38);
+            this.pricechart1.Location = new System.Drawing.Point(427, 181);
             this.pricechart1.Name = "pricechart1";
             series13.ChartArea = "ChartArea1";
             series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -585,7 +616,7 @@
             this.pricechart1.Series.Add(series13);
             this.pricechart1.Series.Add(series14);
             this.pricechart1.Series.Add(series15);
-            this.pricechart1.Size = new System.Drawing.Size(392, 270);
+            this.pricechart1.Size = new System.Drawing.Size(354, 126);
             this.pricechart1.TabIndex = 14;
             this.pricechart1.Text = "200day1";
             title5.Name = "7 day pre and post earnings";
@@ -603,7 +634,7 @@
             legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend6.Name = "Legend1";
             this.pricechart2.Legends.Add(legend6);
-            this.pricechart2.Location = new System.Drawing.Point(427, 324);
+            this.pricechart2.Location = new System.Drawing.Point(427, 321);
             this.pricechart2.Name = "pricechart2";
             series16.ChartArea = "ChartArea1";
             series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -623,7 +654,7 @@
             this.pricechart2.Series.Add(series16);
             this.pricechart2.Series.Add(series17);
             this.pricechart2.Series.Add(series18);
-            this.pricechart2.Size = new System.Drawing.Size(392, 270);
+            this.pricechart2.Size = new System.Drawing.Size(354, 149);
             this.pricechart2.TabIndex = 15;
             this.pricechart2.Text = "200day2";
             title6.Name = "7 day pre and post earnings";
@@ -701,7 +732,7 @@
             this.movingDayAveTwoDataGridViewTextBoxColumn,
             this.movingDayAveFiftyDataGridViewTextBoxColumn});
             this.dataGridView3.DataSource = this.tableBindingSource9;
-            this.dataGridView3.Location = new System.Drawing.Point(-4, 616);
+            this.dataGridView3.Location = new System.Drawing.Point(11, 651);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(1225, 150);
             this.dataGridView3.TabIndex = 16;
@@ -784,35 +815,46 @@
             chartArea7.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
             chartArea7.Name = "ChartArea1";
             this.TwoHundredDay.ChartAreas.Add(chartArea7);
-            this.TwoHundredDay.DataSource = this.tableBindingSource10;
             legend7.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend7.Name = "Legend1";
             this.TwoHundredDay.Legends.Add(legend7);
-            this.TwoHundredDay.Location = new System.Drawing.Point(470, 277);
+            this.TwoHundredDay.Location = new System.Drawing.Point(12, 181);
             this.TwoHundredDay.Name = "TwoHundredDay";
             series19.ChartArea = "ChartArea1";
             series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series19.Legend = "Legend1";
             series19.Name = "Close";
+            series19.XValueMember = "StockDate";
             series19.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series19.YValueMembers = "ClosePrice";
             series20.ChartArea = "ChartArea1";
             series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series20.Legend = "Legend1";
             series20.Name = "High";
+            series20.XValueMember = "StockDate";
             series20.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series20.YValueMembers = "HighPrice";
             series21.ChartArea = "ChartArea1";
             series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series21.Legend = "Legend1";
             series21.Name = "Low";
+            series21.XValueMember = "StockDate";
             series21.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series21.YValueMembers = "LowPrice";
+            series22.ChartArea = "ChartArea1";
+            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series22.Legend = "Legend1";
+            series22.Name = "200DayAverage";
+            series22.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
             this.TwoHundredDay.Series.Add(series19);
             this.TwoHundredDay.Series.Add(series20);
             this.TwoHundredDay.Series.Add(series21);
-            this.TwoHundredDay.Size = new System.Drawing.Size(392, 270);
+            this.TwoHundredDay.Series.Add(series22);
+            this.TwoHundredDay.Size = new System.Drawing.Size(392, 126);
             this.TwoHundredDay.TabIndex = 17;
-            this.TwoHundredDay.Text = "chart5";
-            title7.Name = "7 day pre and post earnings";
-            title7.Text = "7 day pre and post earnings";
+            this.TwoHundredDay.Text = "200 day moving average";
+            title7.Name = "200 Day Moving Average";
+            title7.Text = "200 Day Moving Average";
             this.TwoHundredDay.Titles.Add(title7);
             this.TwoHundredDay.Click += new System.EventHandler(this.TwoHundredDay_Click);
             // 
@@ -821,11 +863,144 @@
             this.tableBindingSource10.DataMember = "Table";
             this.tableBindingSource10.DataSource = this.stockPriceDBDataSet;
             // 
+            // tableBindingSource11
+            // 
+            this.tableBindingSource11.DataMember = "Table";
+            this.tableBindingSource11.DataSource = this.stockPriceDBDataSet;
+            // 
+            // stockPriceDBDataSet1
+            // 
+            this.stockPriceDBDataSet1.DataSetName = "StockPriceDBDataSet1";
+            this.stockPriceDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableBindingSource12
+            // 
+            this.tableBindingSource12.DataMember = "Table";
+            this.tableBindingSource12.DataSource = this.stockPriceDBDataSet1;
+            // 
+            // tableTableAdapter1
+            // 
+            this.tableTableAdapter1.ClearBeforeFill = true;
+            // 
+            // stockPriceDBDataSet2
+            // 
+            this.stockPriceDBDataSet2.DataSetName = "StockPriceDBDataSet2";
+            this.stockPriceDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableBindingSource13
+            // 
+            this.tableBindingSource13.DataMember = "Table";
+            this.tableBindingSource13.DataSource = this.stockPriceDBDataSet2;
+            // 
+            // tableTableAdapter2
+            // 
+            this.tableTableAdapter2.ClearBeforeFill = true;
+            // 
+            // FiftyDay
+            // 
+            chartArea8.AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea8.AxisY.IsStartedFromZero = false;
+            chartArea8.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea8.Name = "ChartArea1";
+            this.FiftyDay.ChartAreas.Add(chartArea8);
+            legend8.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend8.Name = "Legend1";
+            this.FiftyDay.Legends.Add(legend8);
+            this.FiftyDay.Location = new System.Drawing.Point(427, 484);
+            this.FiftyDay.Name = "FiftyDay";
+            series23.ChartArea = "ChartArea1";
+            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series23.Legend = "Legend1";
+            series23.Name = "Close";
+            series23.XValueMember = "StockDate";
+            series23.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series23.YValueMembers = "ClosePrice";
+            series24.ChartArea = "ChartArea1";
+            series24.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series24.Legend = "Legend1";
+            series24.Name = "High";
+            series24.XValueMember = "StockDate";
+            series24.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series24.YValueMembers = "HighPrice";
+            series25.ChartArea = "ChartArea1";
+            series25.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series25.Legend = "Legend1";
+            series25.Name = "Low";
+            series25.XValueMember = "StockDate";
+            series25.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series25.YValueMembers = "LowPrice";
+            series26.ChartArea = "ChartArea1";
+            series26.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series26.Legend = "Legend1";
+            series26.Name = "50DayAverage";
+            series26.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            this.FiftyDay.Series.Add(series23);
+            this.FiftyDay.Series.Add(series24);
+            this.FiftyDay.Series.Add(series25);
+            this.FiftyDay.Series.Add(series26);
+            this.FiftyDay.Size = new System.Drawing.Size(354, 159);
+            this.FiftyDay.TabIndex = 18;
+            this.FiftyDay.Text = "200 day moving average";
+            title8.Name = "50 Day Moving Average";
+            title8.Text = "50 Day Moving Average";
+            this.FiftyDay.Titles.Add(title8);
+            // 
+            // chart5
+            // 
+            chartArea9.AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea9.AxisY.IsStartedFromZero = false;
+            chartArea9.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea9.Name = "ChartArea1";
+            this.chart5.ChartAreas.Add(chartArea9);
+            legend9.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend9.Name = "Legend1";
+            this.chart5.Legends.Add(legend9);
+            this.chart5.Location = new System.Drawing.Point(427, 38);
+            this.chart5.Name = "chart5";
+            series27.ChartArea = "ChartArea1";
+            series27.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series27.Legend = "Legend1";
+            series27.Name = "Close";
+            series27.XValueMember = "StockDate";
+            series27.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series27.YValueMembers = "ClosePrice";
+            series28.ChartArea = "ChartArea1";
+            series28.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series28.Legend = "Legend1";
+            series28.Name = "High";
+            series28.XValueMember = "StockDate";
+            series28.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series28.YValueMembers = "HighPrice";
+            series29.ChartArea = "ChartArea1";
+            series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series29.Legend = "Legend1";
+            series29.Name = "Low";
+            series29.XValueMember = "StockDate";
+            series29.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series29.YValueMembers = "LowPrice";
+            series30.ChartArea = "ChartArea1";
+            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series30.Legend = "Legend1";
+            series30.Name = "200DayAverage";
+            series30.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            this.chart5.Series.Add(series27);
+            this.chart5.Series.Add(series28);
+            this.chart5.Series.Add(series29);
+            this.chart5.Series.Add(series30);
+            this.chart5.Size = new System.Drawing.Size(354, 137);
+            this.chart5.TabIndex = 19;
+            this.chart5.Text = "200 day moving average";
+            title9.Name = "Last Seven Day Earning Moving Average";
+            title9.Text = "Last Seven Day Earning Moving Average";
+            this.chart5.Titles.Add(title9);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1376, 813);
+            this.ClientSize = new System.Drawing.Size(1409, 813);
+            this.Controls.Add(this.chart5);
+            this.Controls.Add(this.FiftyDay);
             this.Controls.Add(this.TwoHundredDay);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.pricechart2);
@@ -873,6 +1048,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TwoHundredDay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockPriceDBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockPriceDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FiftyDay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -958,6 +1140,15 @@
         private System.Windows.Forms.BindingSource tableBindingSource9;
         private System.Windows.Forms.DataVisualization.Charting.Chart TwoHundredDay;
         private System.Windows.Forms.BindingSource tableBindingSource10;
+        private System.Windows.Forms.BindingSource tableBindingSource11;
+        private StockPriceDBDataSet1 stockPriceDBDataSet1;
+        private System.Windows.Forms.BindingSource tableBindingSource12;
+        private StockPriceDBDataSet1TableAdapters.TableTableAdapter tableTableAdapter1;
+        private StockPriceDBDataSet2 stockPriceDBDataSet2;
+        private System.Windows.Forms.BindingSource tableBindingSource13;
+        private StockPriceDBDataSet2TableAdapters.TableTableAdapter tableTableAdapter2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart FiftyDay;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart5;
     }
 }
 

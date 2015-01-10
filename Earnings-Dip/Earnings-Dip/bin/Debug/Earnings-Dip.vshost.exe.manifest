@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Earnings-Dip.exe" size="87552">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Earnings-Dip.exe" size="153600">
       <assemblyIdentity name="Earnings-Dip" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hE35hnFDrcxrqvbAdsrekM4Zh9XmqEJCHytW5MS4xRw=</dsig:DigestValue>
+        <dsig:DigestValue>TMg0NKg6y2Bprte0NVq3bqFIbfLHHxIlq1qRjeM/Ovc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,13 +62,13 @@
       <dsig:DigestValue>xQrizf4jMm81C0Jwf+HK+5CxK9u8gSN6Pld5DnxVVoQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="StockPriceDB.mdf" size="4980736" writeableType="applicationData">
+  <file name="StockPriceDB.mdf" size="4718592" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>iYhg+eSIvA/zEeSmlYxN9yj6DcKIb7bR0L5qOEA2Y0k=</dsig:DigestValue>
+      <dsig:DigestValue>bGJ40AXDb9d8r6WUhFy8a32V8Ka0ZTUtbJdZyxKBr14=</dsig:DigestValue>
     </hash>
   </file>
   <file name="StockPriceDB_log.ldf" size="802816" writeableType="applicationData">
@@ -77,7 +77,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>iFhAlLn30PoUgShHdf24E9rT+NHhP+/TfhUmu4yl0jM=</dsig:DigestValue>
+      <dsig:DigestValue>0TaYtpRVFBzN5PyetlVOZ7cbOmCf6drh2aT4krBdraE=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
